@@ -7,9 +7,8 @@
 
 | Nome completo | GitHub | Turma |
 |--------------|--------|-------|
-| BeatrizGonçalvesAmaral| @biatgamara-lang | 3C |
-| Maria EduardaCassimiradaAnunciação | @cssmari| 3C |
-| (nome 3) | @username | 3A |
+| Beatriz GonçalvesAmaral| @biatgamara-lang | 3C |
+| Maria Eduarda Cassimira da Anunciação | @cssmari| 3C |
 
 **Tema:** Plataforma turísticos loca: pontos turísticos de Brasília/DF
 **Tecnologia:** Python + Flask + SQLite
