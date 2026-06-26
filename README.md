@@ -7,18 +7,18 @@
 
 | Nome completo | GitHub | Turma |
 |--------------|--------|-------|
-| (nome 1) | @username | 3A |
-| (nome 2) | @username | 3A |
+| BeatrizGonçalvesAmaral| @biatgamara-lang | 3C |
+| Maria EduardaCassimiradaAnunciação | @cssmari| 3C |
 | (nome 3) | @username | 3A |
 
-**Tema:** (escreva aqui em 1 frase)
+**Tema:** Plataforma turísticos loca: pontos turísticos de Brasília/DF
 **Tecnologia:** Python + Flask + SQLite
 
 ---
 
 ## 🎯 O que o sistema faz
 
-(Descreva em 2-3 frases o problema que o sistema resolve e para quem)
+(O sistema de pontos turísticos é uma plataforma informativa que reúne os principais atrativos turísticos de Brasília/DF, oferecendo informações como localização, descrição, imagens e curiosidades sobre cada local. Ele é destinado a turistas, estudantes e moradores que desejam conhecer melhor a cidade e planejar visitas de forma prática e organizada.)
 
 ---
 
