@@ -1,4 +1,4 @@
-# TCC 2026 — [Nome do Grupo]
+# TCC 2026 — Grupo 9
 **LTP3 + QP3 · CEMIC 2026 · Prof. Rafael Martins Alves**
 
 --- 
@@ -10,7 +10,7 @@
 | Beatriz GonçalvesAmaral| @biatgamara-lang | 3C |
 | Maria Eduarda Cassimira da Anunciação | @cssmari| 3C |
 
-**Tema:** Plataforma turísticos loca: pontos turísticos de Brasília/DF
+**Tema:** Site turísticos local: pontos turísticos de Brasília/DF
 **Tecnologia:** Python + Flask + SQLite
 
 ---
