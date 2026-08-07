@@ -1,3 +1,5 @@
+semana 09: adiciona documentação inicial
+
 from flask import Flask
 
 app = Flask(__name__)
