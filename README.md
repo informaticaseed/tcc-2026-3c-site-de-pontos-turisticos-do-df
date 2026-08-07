@@ -68,18 +68,4 @@ O projeto utilizará:
 - HTML
 - CSS
 
-O objetivo é desenvolver um site com informações sobre os principais pontos turísticos de Brasília.
-
-## Estrutura inicial
-
-O projeto utilizará:
-- Python
-- Flask
-- SQLite
-- HTML
-- CSS
-
-O objetivo é desenvolver um site com informações sobre os principais pontos turísticos de Brasília.
-semana 09: atualiza README
-
 refs #4
