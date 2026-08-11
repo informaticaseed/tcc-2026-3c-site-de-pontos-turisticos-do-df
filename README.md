@@ -59,3 +59,13 @@ python src/app.py
 # Rodar os testes
 pytest tests/ -v
 ```
+## Estrutura inicial
+
+O projeto utilizará:
+- Python
+- Flask
+- SQLite
+- HTML
+- CSS
+
+refs #4
