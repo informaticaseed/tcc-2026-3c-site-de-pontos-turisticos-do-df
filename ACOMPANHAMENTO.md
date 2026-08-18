@@ -11,9 +11,9 @@
 
 | Integrante | O que se comprometeu a fazer |
 |-----------|------------------------------|
-| (nome 1) | |
-| (nome 2) | |
-| (nome 3) | |
+| Beatriz | Backend |
+| Maria Eduarda | Frontend e melhorar o questionário, criação da logo |
+
 
 ### Verificação em 08/08
 
@@ -34,9 +34,8 @@
 
 | Integrante | O que se comprometeu a fazer |
 |-----------|------------------------------|
-| (nome 1) | |
-| (nome 2) | |
-| (nome 3) | |
+| Beatriz | Finalizar Backend e iniciar banco de dados (SQLite), colocar o código no github e as duas utilizarem|
+| Maria Eduarda | Finalizar Frontend e trabalhar nos dados github|
 
 ### Verificação em 22/08
 
