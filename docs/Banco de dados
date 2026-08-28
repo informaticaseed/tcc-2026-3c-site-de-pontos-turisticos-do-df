@@ -1,1 +1,172 @@
+import sqlite3
 
+
+def conectar():
+    return sqlite3.connect("banco.db")
+
+
+def criar_tabelas():
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS pontos_turisticos (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nome TEXT NOT NULL,
+            descricao TEXT NOT NULL,
+            categoria TEXT NOT NULL,
+            endereco TEXT,
+            horario TEXT,
+            imagem TEXT
+        )
+    """)
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS restaurantes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nome TEXT NOT NULL,
+            descricao TEXT NOT NULL,
+            tipo_comida TEXT,
+            endereco TEXT,
+            horario TEXT,
+            imagem TEXT
+        )
+    """)
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS eventos (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nome TEXT NOT NULL,
+            descricao TEXT NOT NULL,
+            local TEXT,
+            data_evento TEXT,
+            imagem TEXT
+        )
+    """)
+
+    conexao.commit()
+    conexao.close()
+
+
+def inserir_ponto_turistico(nome, descricao, categoria, endereco, horario, imagem):
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    cursor.execute(
+        "SELECT id FROM pontos_turisticos WHERE nome = ?",
+        (nome,)
+    )
+
+    existe = cursor.fetchone()
+
+    if existe is None:
+        cursor.execute("""
+            INSERT INTO pontos_turisticos
+            (nome, descricao, categoria, endereco, horario, imagem)
+            VALUES (?, ?, ?, ?, ?, ?)
+        """, (nome, descricao, categoria, endereco, horario, imagem))
+
+        conexao.commit()
+
+    conexao.close()
+
+
+def inserir_restaurante(nome, descricao, tipo_comida, endereco, horario, imagem):
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    cursor.execute(
+        "SELECT id FROM restaurantes WHERE nome = ?",
+        (nome,)
+    )
+
+    existe = cursor.fetchone()
+
+    if existe is None:
+        cursor.execute("""
+            INSERT INTO restaurantes
+            (nome, descricao, tipo_comida, endereco, horario, imagem)
+            VALUES (?, ?, ?, ?, ?, ?)
+        """, (nome, descricao, tipo_comida, endereco, horario, imagem))
+
+        conexao.commit()
+
+    conexao.close()
+
+
+if __name__ == "__main__":
+    criar_tabelas()
+
+    inserir_ponto_turistico(
+        "Memorial JK",
+        "Espaço histórico dedicado a Juscelino Kubitschek e à história de Brasília.",
+        "Histórico",
+        "Eixo Monumental, Brasília - DF",
+        "Consultar horário de funcionamento",
+        "memorial-jk.jpg"
+    )
+
+    inserir_ponto_turistico(
+        "Palácio da Alvorada",
+        "Residência oficial do Presidente da República, projetada por Oscar Niemeyer.",
+        "Arquitetônico",
+        "SHTN, Brasília - DF",
+        "Consultar horário de visitação",
+        "palacio-alvorada.jpg"
+    )
+
+    inserir_ponto_turistico(
+        "Praça dos Três Poderes",
+        "Espaço que reúne as sedes dos três poderes da República e importantes monumentos de Brasília.",
+        "Histórico",
+        "Praça dos Três Poderes, Brasília - DF",
+        "Área externa com acesso livre",
+        "praca-tres-poderes.jpg"
+    )
+
+    inserir_ponto_turistico(
+        "Congresso Nacional",
+        "Sede do Poder Legislativo brasileiro e um dos principais símbolos arquitetônicos de Brasília.",
+        "Arquitetônico",
+        "Praça dos Três Poderes, Brasília - DF",
+        "Consultar horário de visitação",
+        "congresso-nacional.jpg"
+    )
+
+    inserir_ponto_turistico(
+        "Catedral Metropolitana de Brasília",
+        "Um dos principais símbolos arquitetônicos de Brasília, projetado por Oscar Niemeyer.",
+        "Religioso e Arquitetônico",
+        "Esplanada dos Ministérios, Brasília - DF",
+        "Consultar horário de visitação",
+        "catedral-brasilia.jpg"
+    )
+
+    inserir_restaurante(
+        "Pizzas Dom Bosco",
+        "Tradicional pizzaria de Brasília, conhecida por servir pizzas em estilo simples e popular.",
+        "Pizzaria",
+        "Brasília - DF",
+        "Consultar horário de funcionamento",
+        "pizzas-dom-bosco.jpg"
+    )
+
+    inserir_restaurante(
+        "Pastel da Viçosa",
+        "Tradicional estabelecimento de Brasília conhecido por pastéis e lanches rápidos.",
+        "Pastelaria",
+        "Brasília - DF",
+        "Consultar horário de funcionamento",
+        "pastel-vicosa.jpg"
+    )
+
+    inserir_restaurante(
+        "Rossoni",
+        "Estabelecimento tradicional de Brasília conhecido por lanches e refeições.",
+        "Lanchonete",
+        "Brasília - DF",
+        "Consultar horário de funcionamento",
+        "rossoni.jpg"
+    )
+
+    print("Dados inseridos com sucesso!")
