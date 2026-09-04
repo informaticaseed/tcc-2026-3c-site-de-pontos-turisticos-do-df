@@ -83,4 +83,7 @@ Cultura:
 
 Culinária:
 1. Pizzas Dom Bosco 
-2. Pastel da Viçosa 
+2. Pastel da Viçosa
+
+   git fetch origin
+git checkout 9-semana-13-documentação
