@@ -56,9 +56,8 @@
 
 | Integrante | O que se comprometeu a fazer |
 |-----------|------------------------------|
-| (nome 1) | |
-| (nome 2) | |
-| (nome 3) | |
+| Beatriz | Terminar backend/frontend e hospedar o site (sugestões vercel e render)|
+| Maria Eduarda | Finalizar o relatório: colocar imagens do site e diagramas (DER, DFD e caso de uso)|
 
 ### Verificação em 05/09
 
