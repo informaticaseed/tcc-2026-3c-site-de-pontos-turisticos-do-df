@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes - Brasília à Vista</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Brasília à Vista</h1>
+
+        <nav>
+            <a href="/">Início</a>
+            <a href="/?categoria=Histórico">Histórico</a>
+            <a href="/?categoria=Cultural">Cultura</a>
+            <a href="/?categoria=Culinária">Culinária</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>{{ ponto[1] }}</h2>
+        <img
+        src="/static/{{ ponto[6].replace('.jpg', '.jpeg') }}"
+            alt="{{ ponto[1] }}"
+            class="foto-detalhes"
+>
+
+        <p>{{ ponto[2] }}</p>
+
+        <p>
+            <strong>Categoria:</strong>
+            {{ ponto[3] }}
+        </p>
+
+        <p>
+            <strong>Endereço:</strong>
+            {{ ponto[4] }}
+        </p>
+
+        <p>
+            <strong>Horário:</strong>
+            {{ ponto[5] }}
+        </p>
+
+        <a href="/">Voltar</a>
+    </main>
+
+</body>
+
+</html>

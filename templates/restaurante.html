@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do restaurante - Brasília à Vista</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Brasília à Vista</h1>
+
+        <nav>
+            <a href="/">Início</a>
+            <a href="/?categoria=Histórico">Histórico</a>
+            <a href="/?categoria=Cultural">Cultura</a>
+            <a href="/?categoria=Culinária">Culinária</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>{{ restaurante[1] }}</h2>
+
+        <img
+            src="/static/{{ restaurante[6].replace('.jpg', '.jpeg') }}"
+            alt="{{ restaurante[1] }}"
+            class="foto-detalhes"
+        >
+
+        <p>{{ restaurante[2] }}</p>
+
+        <p>
+            <strong>Tipo:</strong>
+            {{ restaurante[3] }}
+        </p>
+
+        <p>
+            <strong>Endereço:</strong>
+            {{ restaurante[4] }}
+        </p>
+
+        <p>
+            <strong>Horário:</strong>
+            {{ restaurante[5] }}
+        </p>
+
+        <a href="/?categoria=Culinária">Voltar</a>
+    </main>
+
+</body>
+
+</html>
