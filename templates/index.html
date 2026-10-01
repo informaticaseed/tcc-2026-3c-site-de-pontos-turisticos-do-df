@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasília à Vista</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Brasília à Vista</h1>
+
+        <nav>
+            <a href="/">Início</a>
+            <a href="/?categoria=Histórico">Histórico</a>
+            <a href="/?categoria=Cultural">Cultura</a>
+            <a href="/?categoria=Culinária">Culinária</a>
+            <a href="#sobre">Sobre Brasília</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="inicio">
+
+            <div class="forma forma-circulo"></div>
+
+            <div class="texto-inicio">
+                <h2>Conheça os pontos turísticos de Brasília</h2>
+
+                <p>
+                    Descubra a história, a cultura e a gastronomia da capital do Brasil.
+                </p>
+            </div>
+
+            <img src="/static/logo-brasilia-a-vista.jpeg" 
+                     alt="Logo Brasília à Vista"
+                     class="logo-inicio"
+            >
+                     
+            </div>
+
+            <form action="/" method="get" class="barra-pesquisa">
+                <input
+                    type="text"
+                    name="busca"
+                    placeholder="Pesquise um ponto turístico ou restaurante"
+                    value="{{ request.args.get('busca', '') }}"
+                >
+                <button type="submit">Pesquisar</button>
+            </form>
+
+            {% if request.args.get('busca') %}
+                <h2>Resultado da pesquisa</h2>
+        
+            {% elif request.args.get('categoria') == 'Cultural' %}
+                <h2>Pontos culturais</h2>
+        
+            {% elif request.args.get('categoria') == 'Histórico' %}
+                <h2>Pontos turísticos históricos</h2>
+        
+            {% elif request.args.get('categoria') != 'Culinária' %}
+                <h2>Pontos turísticos de Brasília</h2>
+            {% endif %}
+
+        {% for ponto in pontos_turisticos %}
+                <div class="card-local">
+                    <img
+                        src="/static/{{ ponto[6].replace('.jpg', '.jpeg') }}"
+                        alt="{{ ponto[1] }}"
+                        class="foto-card"
+>
+                    <h3>
+                        <a href="/detalhes/{{ ponto[0] }}">
+                            {{ ponto[1] }}
+                        </a>
+                    </h3>
+                    <p>{{ ponto[2] }}</p>
+                    <p><strong>Endereço:</strong> {{ ponto[4] }}</p>
+                    <p><strong>Horário:</strong> {{ ponto[5] }}</p>
+                </div>
+        {% endfor %}
+        
+        {% if not request.args.get('categoria') or request.args.get('categoria') == 'Culinária' %}
+
+            <h2 id="culinaria">Culinária</h2>
+
+            {% for restaurante in restaurantes %}
+
+                <div class="card-local card-restaurante">
+
+                    <img
+                        src="/static/{{ restaurante[6].replace('.jpg', '.jpeg') }}"
+                        alt="{{ restaurante[1] }}"
+                        class="foto-card"
+                >
+
+                   <h3>
+                       <a href="/restaurante/{{ restaurante[0] }}">
+                           {{ restaurante[1] }}
+                       </a>
+                   </h3>
+
+                   <p>{{ restaurante[2] }}</p>
+
+                   <p>
+                       <strong>Tipo:</strong>
+                       {{ restaurante[3] }}
+                   </p>
+
+                   <p>
+                       <strong>Endereço:</strong>
+                       {{ restaurante[4] }}
+                   </p>
+ 
+                   <p>
+                       <strong>Horário:</strong>
+                       {{ restaurante[5] }}
+                   </p>
+
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+      
+        <section id="sobre">
+            <h2>Sobre Brasília</h2>
+        
+            <p>
+                Brasília é a capital do Brasil e se destaca por sua arquitetura,
+                história, cultura e importância política. A cidade reúne diversos
+                pontos turísticos que representam a identidade e o patrimônio
+                cultural do Distrito Federal.
+            </p>
+        </section>
+</main>
+
+</body>
+
+</html>
